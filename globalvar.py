@@ -12,7 +12,6 @@ id = 122
 cost = 1.0
 Denom_1 = [0.2, 0.5, 5.0, 6.0, 50.0]
 Times_1 = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0]
-# Times_1 = [1.0, 2.0, 5.0, 10.0, 15.0, 20.0, 30.0, 40.0]
 
 ###如果沒有第二組面額跟倍數,填空值即可 Denom_2=[]
 Denom_2 = []
@@ -35,7 +34,6 @@ else:
 # gameid = 'RKS-H5-00'+ id
 gameid = 'PSS-ON-%05d' % id
 gamepath = path + gameid + '\\'
-# print(gamepath)
 
 imageSave = gamepath + 'photo'
 result = gamepath + 'payresult'

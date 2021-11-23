@@ -1,7 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from jpype import *
-import time, os
+import time
+import os
 import sys
 import re
 from selenium import webdriver
@@ -10,8 +11,6 @@ import unittest
 import HTMLTestRunner
 from parameterized import parameterized
 import pyautogui
-import os
-import cv2
 ### 測試案例
 import paytable_check
 import globalvar as gl
@@ -110,7 +109,7 @@ def into_game():
         browser.get(url)
         time.sleep(10)
 
-        # 如果有刮刮樂/大挑戰再加下面那段
+        # <editor-fold desc="如果有刮刮樂/大挑戰再加下面那段">
         ActionChains(browser).move_by_offset(challenge1[0], challenge1[1] - 110).click().perform()
         time.sleep(0.3)
         ActionChains(browser).move_by_offset(-challenge1[0], -(challenge1[1] - 110)).perform()
@@ -119,6 +118,7 @@ def into_game():
         # time.sleep(0.3)
         # ActionChains(browser).move_by_offset(-challenge1[0],-(challenge1[1]-110)).perform()
         # time.sleep(1)
+        # </editor-fold>
 
         for x in range(len(gl.Bet_list)):
             totalbet_num = x
@@ -169,8 +169,6 @@ class paytable(unittest.TestCase):
 
 
 def Suite():
-    # suiteTest = unittest.TestSuite()
-    # suiteTest.addTest(CalculateFolderSize_TestCase(example))
     suite = unittest.TestLoader().loadTestsFromTestCase(paytable)
     return suite
 

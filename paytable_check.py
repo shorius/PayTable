@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 import math
 import re
-import os,sys
+import os
+import sys
 
 import globalvar as gl
 dir = os.getcwd()
@@ -12,8 +13,8 @@ if not dir in sys.path: sys.path.append(dir)
 lines = []
 with open(gl.path + '\\source\\pay_table_config.js', 'r') as fp:
     js = fp.read()
-    js = re.findall(r"pay: [0-9]+", js)  # 回傳js檔pay欄位
-    js = re.findall(r"[0-9]+", str(js))  # 再回傳一次數值
+    js = re.findall(r"pay: [0-9]+", js)
+    js = re.findall(r"[0-9]+", str(js))
     js = list(map(float, js))
     # print(js)
     for x in range(len(js)):
