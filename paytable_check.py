@@ -9,7 +9,6 @@ import globalvar as gl
 dir = os.getcwd()
 if not dir in sys.path: sys.path.append(dir)
 
-###使用pay_table_config.js作為數值比對基準
 lines = []
 with open(gl.path + '\\source\\pay_table_config.js', 'r') as fp:
     js = fp.read()
