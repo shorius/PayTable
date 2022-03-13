@@ -3,12 +3,6 @@
 import os
 import sys
 
-### 存檔路徑
-path = 'D:\\PycharmProjects\\paytable v1.0\\'
-
-language = ['eng', 'sch', 'tch', 'tai']
-id = "GAMEID"
-### 押注設定要填小數點
 cost = 1.0
 Denom_1 = [0.2, 0.5, 5.0, 6.0, 50.0]
 Times_1 = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0]
