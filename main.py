@@ -101,15 +101,14 @@ def into_game():
         count += 1
         lan += 1
         wfp = open(gl.result + '\\' + gl.language[lan] + '_Paytable.txt', 'w', encoding="utf-8")
-        a = 'https://dev-api.iplaystar.net/game/'
-        b = '/?access_token=(*--)aa62ffb88b300f6be6654615f17ce6fa&lang=' + gl.language[
-            lan] + '&ccy=CNY&sm=00&subid=0&fullscr=1&lc=en-US&pm=0&ns=0&origin=https%3a%2f%2fdev-api.iplaystar.net&uid=3cMBz6ywu2h1dlEc8ZmKAfgNcV2TJOcliK1h%2bc4F%2bHA%3d&anal=8&lb=1&stf=1'
+        a = "API_URL
+        b = 'token' + gl.language[lan]
         url = a + str(gl.gameid) + b
 
         browser.get(url)
         time.sleep(10)
 
-        # <editor-fold desc="如果有刮刮樂/大挑戰再加下面那段">
+        # <editor-fold desc="如果有event再加下面那段">
         ActionChains(browser).move_by_offset(challenge1[0], challenge1[1] - 110).click().perform()
         time.sleep(0.3)
         ActionChains(browser).move_by_offset(-challenge1[0], -(challenge1[1] - 110)).perform()
