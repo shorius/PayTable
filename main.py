@@ -28,7 +28,7 @@ path = os.getcwd()
 # chromedrive
 chromedrive = "C:/Python37/chromedriver"
 chromedrive = chromedrive
-## 截圖問題
+# 截圖問題
 # options = webdriver.ChromeOptions()
 # options.add_argument('disable-gpu')
 # driver=webdriver.Chrome(chrome_options = options)
@@ -36,30 +36,10 @@ browser = webdriver.Chrome(chromedrive)
 browser.maximize_window()
 
 # pyautogui座標
-### selenium可沿用但y座標須扣掉-110
-
-location_help = (230, 994)
-location_help_next = (1685, 634)
-location_help_close = (1688, 330)
-location_bet_plus = (1516, 980)
-
-challenge1 = (620, 497)
-challenge2 = (1000, 497)
-challenge3 = (1320, 497)
-
-sc_left = Region(590, 705, 185, 102)
-sc_right = Region(1288, 702, 219, 130)
-
-p_r1 = Region(406, 717, 183, 71)
-p_r2 = Region(754, 722, 195, 65)
-p_r3 = Region(1102, 723, 185, 61)
-p_r4 = Region(1448, 725, 192, 62)
-
-### 每一頁的辨識區域,page_total=頁數列表
+# selenium可沿用但y座標須扣掉-110
+# 每一頁的辨識區域,page_total=頁數列表
 page_0 = [p_r1, p_r2, p_r3, p_r4]
-# page_1 = [p_r1, p_r2, p_r3, p_r4]
-# page_2 = [p_r1, p_r2, p_r3]
-# page_3 = [p_r1, p_r2, p_r3]
+page_1 = [p_r1, p_r2, p_r3, p_r4]
 page_total = [page_0]
 
 
@@ -113,17 +93,13 @@ def into_game():
         time.sleep(0.3)
         ActionChains(browser).move_by_offset(-challenge1[0], -(challenge1[1] - 110)).perform()
         time.sleep(1)
-        # ActionChains(browser).move_by_offset(challenge1[0],challenge1[1]-110).click().perform()
-        # time.sleep(0.3)
-        # ActionChains(browser).move_by_offset(-challenge1[0],-(challenge1[1]-110)).perform()
-        # time.sleep(1)
         # </editor-fold>
 
         for x in range(len(gl.Bet_list)):
             totalbet_num = x
             click_help_open()
             time.sleep(0.5)
-            # click_next() ### 如果點開help第0頁就有連動的Scatter,則此行不需要
+            # click_next()
             time.sleep(0.5)
             for n in range(len(page_total)):
                 now_page = page_total[n]
