@@ -88,13 +88,6 @@ def into_game():
         browser.get(url)
         time.sleep(10)
 
-        # <editor-fold desc="如果有event再加下面那段">
-        ActionChains(browser).move_by_offset(challenge1[0], challenge1[1] - 110).click().perform()
-        time.sleep(0.3)
-        ActionChains(browser).move_by_offset(-challenge1[0], -(challenge1[1] - 110)).perform()
-        time.sleep(1)
-        # </editor-fold>
-
         for x in range(len(gl.Bet_list)):
             totalbet_num = x
             click_help_open()
@@ -103,12 +96,9 @@ def into_game():
             time.sleep(0.5)
             for n in range(len(page_total)):
                 now_page = page_total[n]
-                # browser.get_screenshot_as_file(gl.imageSave + '\\' + str(gl.language[lan]) + '_Paytable_' + str(
-                #     totalbet_num) + '-' + str(n) + '.png')
                 img = pyautogui.screenshot(region=[0, 110, 1920, 926])  # x,y,w,h
                 img.save(gl.imageSave + '\\' + str(gl.language[lan]) + '_Paytable_' + str(
                     totalbet_num) + '-' + str(n) + '.png')
-
                 for now_region in range(len(now_page)):
                     value_reg = now_page[now_region]
                     value = value_reg.text()
